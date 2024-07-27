@@ -1,0 +1,11 @@
+services:
+  postgres:
+    image: postgres:16
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: pqgotest
+      POSTGRES_PASSWORD: pqgotest
+      POSTGRES_DB: pqgotest
+    volumes:
+      - ./schema.sql:/docker-entrypoint-initdb.d/schema.sql
